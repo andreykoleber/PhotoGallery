@@ -63,7 +63,7 @@ public class ThumbnailDownloader<T> extends HandlerThread {
             mResponseHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    if (mRequestMap.get(target) == null || mHasQuit) {
+                    if (mRequestMap.get(target) != url || mHasQuit) {
                         return;
                     }
                     mRequestMap.remove(target);
